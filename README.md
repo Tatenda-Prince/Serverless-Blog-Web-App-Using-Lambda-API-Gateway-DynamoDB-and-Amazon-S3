@@ -235,7 +235,7 @@ Go to the API Gateway Console.
 
 Create a new REST API click Build
 
-![image_alt]()
+![image_alt](https://github.com/Tatenda-Prince/Serverless-Blog-Web-App-Using-Lambda-API-Gateway-DynamoDB-and-Amazon-S3/blob/f4efb9b2e937d8885f7b93b8e16a1c4ed4dc12c8/img/Screenshot%202025-02-03%20194433.png)
 
 
 name your API 
