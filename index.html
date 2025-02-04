@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Stoic Blog</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .container {
+            width: 90%;
+            max-width: 600px;
+            background: white;
+            padding: 20px;
+            margin-top: 20px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        h1 {
+            text-align: center;
+        }
+        form {
+            display: flex;
+            flex-direction: column;
+        }
+        input, textarea {
+            margin-bottom: 10px;
+            padding: 10px;
+            font-size: 16px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            background: #007bff;
+            color: white;
+            border: none;
+            padding: 10px;
+            font-size: 16px;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background: #0056b3;
+        }
+        .post {
+            background: white;
+            padding: 15px;
+            margin-top: 15px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+        }
+        .success-message {
+            color: green;
+            text-align: center;
+            margin-top: 10px;
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>My Blog</h1>
+        <form id="blogForm">
+            <input type="text" id="title" placeholder="Title" required>
+            <textarea id="content" placeholder="Content" rows="4" required></textarea>
+            <button type="submit">Submit</button>
+        </form>
+        <p id="successMessage" class="success-message">Post submitted successfully!</p>
+    </div>
+    <div class="container" id="posts"></div>
+
+    <script>
+        const apiUrl = 'https://p2xflcerh3.execute-api.us-east-1.amazonaws.com/prod/posts';
+
+        async function fetchPosts() {
+            const response = await fetch(apiUrl);
+            const posts = await response.json();
+            const postsContainer = document.getElementById('posts');
+            postsContainer.innerHTML = posts.map(post => `
+                <div class="post">
+                    <h2>${post.Title}</h2>
+                    <p>${post.Content}</p>
+                </div>
+            `).join('');
+        }
+
+        document.getElementById('blogForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const titleInput = document.getElementById('title');
+            const contentInput = document.getElementById('content');
+            const successMessage = document.getElementById('successMessage');
+
+            await fetch(apiUrl, {
+                method: 'POST',
+                body: JSON.stringify({ title: titleInput.value, content: contentInput.value }),
+                headers: { 'Content-Type': 'application/json' }
+            });
+
+            titleInput.value = '';
+            contentInput.value = '';
+            successMessage.style.display = 'block';
+            
+            setTimeout(() => {
+                successMessage.style.display = 'none';
+            }, 3000);
+
+            fetchPosts(); 
+        });
+
+        fetchPosts();
+    </script>
+</body>
+</html>
