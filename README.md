@@ -81,7 +81,7 @@ We must create an index.html file for the blog frontend. This file will include 
 Upload the `index.html` and any other static assets (CSS, JS) to the S3 bucket.
 
 
-![image_alt]()
+![image_alt](https://github.com/Tatenda-Prince/Serverless-Blog-Web-App-Using-Lambda-API-Gateway-DynamoDB-and-Amazon-S3/blob/8ad49bffb3f3258f4ccf3528c44d5f29d807b738/img/Screenshot%202025-02-03%20193336.png)
 
 
 1.5.Make the Bucket Public:
