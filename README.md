@@ -353,7 +353,7 @@ Upload the updated index.html to your S3 bucket.
 
 6.2.Submit a blog post using the form
 
-![image_alt]()
+![image_alt](https://github.com/Tatenda-Prince/Serverless-Blog-Web-App-Using-Lambda-API-Gateway-DynamoDB-and-Amazon-S3/blob/708f204e13e44a16001af5bb20067205195ed7fc/img/Screenshot%202025-02-03%20200943.png)
 
 
 6.3.Verify that the post is saved in DynamoDB and displayed on the frontend.
