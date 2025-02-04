@@ -60,7 +60,7 @@ Access the AWS Management Console and search for Amazon S3.
 
 Choose create bucket and leave everything as default
 
-![image_alt]()
+![image_alt](https://github.com/Tatenda-Prince/Serverless-Blog-Web-App-Using-Lambda-API-Gateway-DynamoDB-and-Amazon-S3/blob/3bec13cda3896efd82bc4fd23e7ed6d510aac859/img/Screenshot%202025-02-03%20192716.png)
 
 
 
