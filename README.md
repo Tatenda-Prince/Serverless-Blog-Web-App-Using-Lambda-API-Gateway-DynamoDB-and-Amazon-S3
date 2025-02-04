@@ -153,7 +153,7 @@ Attach the `AmazonDynamoDBFullAccess`  and `AWSLambdaBasicExecutionRole` policy 
 
 choose the role that you have created 
 
-![image_alt]()
+![image_alt](https://github.com/Tatenda-Prince/Serverless-Blog-Web-App-Using-Lambda-API-Gateway-DynamoDB-and-Amazon-S3/blob/82060548e2173e3df0ffeb361f97f000a6b6487d/img/Screenshot%202025-02-03%20193820.png)
 
 
 3.3.Lets write the Lambda Functions 
