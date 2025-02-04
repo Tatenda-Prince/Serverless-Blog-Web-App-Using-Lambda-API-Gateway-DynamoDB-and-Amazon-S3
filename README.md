@@ -66,7 +66,7 @@ Choose create bucket and leave everything as default
 
 1.3.Enable Static Website Hosting in the bucket properties
 
-![image_alt]()
+![image_alt](https://github.com/Tatenda-Prince/Serverless-Blog-Web-App-Using-Lambda-API-Gateway-DynamoDB-and-Amazon-S3/blob/3d34c5798c072d1e57911ce0943df8b6a388aa98/img/Screenshot%202025-02-03%20193016.png)
 
 
 Set the `index.html` as the index document.
