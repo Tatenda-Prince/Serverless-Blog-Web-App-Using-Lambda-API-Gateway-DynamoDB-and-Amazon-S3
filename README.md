@@ -74,5 +74,66 @@ Set the `index.html` as the index document.
 ![image_alt](https://github.com/Tatenda-Prince/Serverless-Blog-Web-App-Using-Lambda-API-Gateway-DynamoDB-and-Amazon-S3/blob/568272087c6e49a45fd69534a2f360c7a3187ebb/img/Screenshot%202025-02-03%20193046.png)
 
 
+1.4.Upload Frontend Files:
+
+We must create an index.html file for the blog frontend. This file will include a form to submit blog posts and display existing posts.
+
+Upload the `index.html` and any other static assets (CSS, JS) to the S3 bucket.
+
+
+![image_alt]()
+
+
+1.5.Make the Bucket Public:
+
+Update the bucket policy to allow public read access:
+
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Effect": "Allow",
+      "Principal": "*",
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::my-blog-frontend/*"
+    }
+  ]
+}
+```
+
+
+## Step 2: Set Up the Database (DynamoDB)
+
+2.1..Lets Navigate to DynamoDB:
+
+Go to the DynamoDB service in the AWS Management Console.
+
+Click "Create table"
+
+
+2.2.Configure the Table
+
+We will give our table a name `BlogPosts`
+
+Partition key: `PostID` Type "String"
+
+
+![image_alt]()
+
+
+Click Create Table
+
+2.3.As you can our table active now see example below-
+
+
+![image_alt]()
+
+
+
+
+
+
+
 
 
