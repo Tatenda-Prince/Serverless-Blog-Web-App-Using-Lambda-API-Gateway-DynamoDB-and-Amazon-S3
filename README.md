@@ -364,7 +364,7 @@ Upload the updated index.html to your S3 bucket.
 4.4.We can also view all our saved blog post in DynamoDB using our api gateway URL
 
 
-![image_alt]()
+![image_alt](https://github.com/Tatenda-Prince/Serverless-Blog-Web-App-Using-Lambda-API-Gateway-DynamoDB-and-Amazon-S3/blob/0bd6a2e00b97aedba1659a788cc34dce850a0086/img/Screenshot%202025-02-03%20201012.png)
 
 
 ## Future Enhancements
