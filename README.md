@@ -119,7 +119,7 @@ We will give our table a name `BlogPosts`
 Partition key: `PostID` Type "String"
 
 
-![image_alt]()
+![image_alt](https://github.com/Tatenda-Prince/Serverless-Blog-Web-App-Using-Lambda-API-Gateway-DynamoDB-and-Amazon-S3/blob/e2877cd8f74f353e2a7e6bd9c2d69783afbaae80/img/Screenshot%202025-02-03%20193520.png)
 
 
 Click Create Table
