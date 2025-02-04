@@ -254,7 +254,7 @@ Create a resource /posts.
 
 Add a `POST` method for creating posts and connect it to the `CreatePost` Lambda function.
 
-![image_alt]()
+![image_alt](https://github.com/Tatenda-Prince/Serverless-Blog-Web-App-Using-Lambda-API-Gateway-DynamoDB-and-Amazon-S3/blob/e47f5cce5a168e3ca0f2a907fdb19fa150f169c6/img/Screenshot%202025-02-03%20194710.png)
 
 Add a `GET` method for retrieving posts and connect it to the `GetPosts` Lambda function.
 
