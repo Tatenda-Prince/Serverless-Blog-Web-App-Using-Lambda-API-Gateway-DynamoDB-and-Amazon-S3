@@ -71,7 +71,7 @@ Choose create bucket and leave everything as default
 
 Set the `index.html` as the index document.
 
-![image_alt]()
+![image_alt](https://github.com/Tatenda-Prince/Serverless-Blog-Web-App-Using-Lambda-API-Gateway-DynamoDB-and-Amazon-S3/blob/568272087c6e49a45fd69534a2f360c7a3187ebb/img/Screenshot%202025-02-03%20193046.png)
 
 
 
