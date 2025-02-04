@@ -144,7 +144,7 @@ GetPosts: To retrieve all blog posts.
 
 Click "Create function".
 
-![image_alt]()
+![image_alt](https://github.com/Tatenda-Prince/Serverless-Blog-Web-App-Using-Lambda-API-Gateway-DynamoDB-and-Amazon-S3/blob/210d28881a47451bf29cb70281fc7cae8be861d4/img/Screenshot%202025-02-03%20193741.png)
 
 
 Add Permissions:
