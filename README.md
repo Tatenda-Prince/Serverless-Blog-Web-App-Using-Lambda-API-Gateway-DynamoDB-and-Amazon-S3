@@ -348,7 +348,7 @@ Upload the updated index.html to your S3 bucket.
 
 6.1.We should  go back to our s3 bucket under under "Properties" scrolll down till you find website hosting and copy our S3 static website URL in a browser.
 
-![image_alt]()
+![image_alt](https://github.com/Tatenda-Prince/Serverless-Blog-Web-App-Using-Lambda-API-Gateway-DynamoDB-and-Amazon-S3/blob/855257dd93836441b2d258c463df7badccd4473d/img/Screenshot%202025-02-03%20195659.png)
 
 
 6.2.Submit a blog post using the form
