@@ -258,7 +258,7 @@ Add a `POST` method for creating posts and connect it to the `CreatePost` Lambda
 
 Add a `GET` method for retrieving posts and connect it to the `GetPosts` Lambda function.
 
-![image_alt]()
+![image_alt](https://github.com/Tatenda-Prince/Serverless-Blog-Web-App-Using-Lambda-API-Gateway-DynamoDB-and-Amazon-S3/blob/a4362dc399d43d1e160bc65bbef14ed883c857c3/img/Screenshot%202025-02-03%20194804.png)
 
 
 4.3.Enable CORS:
