@@ -248,6 +248,10 @@ name your API
 
 Create a resource /posts.
 
+![image_alt](https://github.com/Tatenda-Prince/Serverless-Blog-Web-App-Using-Lambda-API-Gateway-DynamoDB-and-Amazon-S3/blob/e56db15b31f4f653244b98074426de6c930afc77/img/Screenshot%202025-02-03%20194552.png)
+
+
+
 Add a `POST` method for creating posts and connect it to the `CreatePost` Lambda function.
 
 ![image_alt]()
