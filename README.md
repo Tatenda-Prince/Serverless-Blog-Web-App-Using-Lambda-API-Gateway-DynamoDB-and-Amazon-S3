@@ -265,7 +265,7 @@ Add a `GET` method for retrieving posts and connect it to the `GetPosts` Lambda 
 
 Enable CORS for the /posts resource to allow requests from your S3 frontend.
 
-![image_alt]()
+![image_alt](https://github.com/Tatenda-Prince/Serverless-Blog-Web-App-Using-Lambda-API-Gateway-DynamoDB-and-Amazon-S3/blob/38d791c144c85be1aa1daba78541690b1e7d1e0a/img/Screenshot%202025-02-03%20194956.png)
 
 
 4.4.Deploy the API:
