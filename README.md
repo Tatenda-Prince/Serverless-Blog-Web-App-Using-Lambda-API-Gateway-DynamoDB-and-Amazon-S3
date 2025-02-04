@@ -273,13 +273,107 @@ Enable CORS for the /posts resource to allow requests from your S3 frontend.
 Deploy the API to a stage (e.g., prod).
 
 
-![image_alt]()
+![image_alt](https://github.com/Tatenda-Prince/Serverless-Blog-Web-App-Using-Lambda-API-Gateway-DynamoDB-and-Amazon-S3/blob/bb0a4d7d319368e8c221fd084e2655bba3904574/img/Screenshot%202025-02-03%20195620.png)
 
 
 Take Note the API endpoint URL.
 
 
 ## Step 5: Connect Frontend to Backend
+
+5.1.Update Frontend Code:
+
+In your index.html, use JavaScript to make API calls to the API Gateway endpoint.
+
+```html
+
+<!DOCTYPE html>
+<html>
+<head>
+    <title>My Blog</title>
+</head>
+<body>
+    <h1>My Blog</h1>
+    <form id="blogForm">
+        <input type="text" id="title" placeholder="Title" required>
+        <textarea id="content" placeholder="Content" required></textarea>
+        <button type="submit">Submit</button>
+    </form>
+    <div id="posts"></div>
+
+    <script>
+        const apiUrl = 'https://YOUR_API_GATEWAY_URL/prod/posts';
+
+        // Function to fetch and display posts
+        async function fetchPosts() {
+            const response = await fetch(apiUrl);
+            const posts = await response.json();
+            const postsContainer = document.getElementById('posts');
+            postsContainer.innerHTML = posts.map(post => `
+                <div>
+                    <h2>${post.Title}</h2>
+                    <p>${post.Content}</p>
+                </div>
+            `).join('');
+        }
+
+        // Function to submit a new post
+        document.getElementById('blogForm').addEventListener('submit', async (e) => {
+            e.preventDefault();
+            const title = document.getElementById('title').value;
+            const content = document.getElementById('content').value;
+
+            await fetch(apiUrl, {
+                method: 'POST',
+                body: JSON.stringify({ title, content }),
+                headers: { 'Content-Type': 'application/json' }
+            });
+
+            fetchPosts(); // Refresh posts after submission
+        });
+
+        // Fetch posts on page load
+        fetchPosts();
+    </script>
+</body>
+</html>
+```
+
+5.2.Upload Updated Frontend Files:
+
+Upload the updated index.html to your S3 bucket.
+
+
+## Step 6: Lets Test the Application
+
+6.1.We should  go back to our s3 bucket under under "Properties" scrolll down till you find website hosting and copy our S3 static website URL in a browser.
+
+![image_alt]()
+
+
+6.2.Submit a blog post using the form
+
+![image_alt]()
+
+
+6.3.Verify that the post is saved in DynamoDB and displayed on the frontend.
+
+![image_alt]()
+
+
+4.4.We can also view all our saved blog post in DynamoDB using our api gateway URL
+
+
+![image_alt]()
+
+
+## Future Enhancements
+
+1.We will add authentication using AWS Cognito to allow only Authenticated users to post to our blog.
+
+# Congratulations
+
+We have successfully deployed a fully serverless web application using AWS services. We have learned how to host a static website on Amazon S3, configure Amazon API Gateway to handle frontend API requests, and develop a backend using AWS Lambda with Python for processing blog data.Additionally, we understood how to implement user authentication with Amazon Cognito, managing secure access with JWT tokens. Working with Amazon DynamoDB, you will explore NoSQL database operations, including storing and retrieving blog posts efficiently. This project will also enhance your knowledge of CORS policies, API security, and cost optimization in cloud computing.
 
 
 
