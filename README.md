@@ -127,7 +127,105 @@ Click Create Table
 2.3.As you can our table active now see example below-
 
 
+![image_alt](https://github.com/Tatenda-Prince/Serverless-Blog-Web-App-Using-Lambda-API-Gateway-DynamoDB-and-Amazon-S3/blob/57adb9e3b85d3179f2250a3fb607785dc20f94a3/img/Screenshot%202025-02-03%20193606.png)
+
+
+## Step 3: Set Up the Backend (AWS Lambda)
+
+3.1.Navigate to Lambda:
+
+Go to the Lambda service.
+
+3.2.Create two Lambda functions:
+
+CreatePost: To handle creating new blog posts.
+
+GetPosts: To retrieve all blog posts.
+
+Click "Create function".
+
 ![image_alt]()
+
+
+Add Permissions:
+
+Attach the `AmazonDynamoDBFullAccess`  and `AWSLambdaBasicExecutionRole` policy to the Lambda functions' IAM roles.
+
+choose the role that you have created 
+
+![image_alt]()
+
+
+3.3.Lets write the Lambda Functions 
+
+Scroll down to the "Function code" section.
+
+Replace the default code with the following Python code: 
+
+## CreatePost Lambda Function:
+
+```python
+
+import json
+import boto3
+from uuid import uuid4
+
+dynamodb = boto3.resource('dynamodb')
+table = dynamodb.Table('BlogPosts')
+
+def lambda_handler(event, context):
+    # Parse the request body
+    body = json.loads(event['body'])
+    post_id = str(uuid4())
+    title = body['title']
+    content = body['content']
+
+    # Insert into DynamoDB
+    table.put_item(Item={
+        'PostID': post_id,
+        'Title': title,
+        'Content': content
+    })
+
+    return {
+        'statusCode': 200,
+        'body': json.dumps({'message': 'Post created successfully!'})
+    }
+
+```
+
+## code explanation
+
+This AWS Lambda function handles the creation of blog posts by storing them in a DynamoDB table named "BlogPosts". It first initializes a connection to DynamoDB using boto3 and targets the BlogPosts table. When triggered, the function extracts the request body (which is expected to be JSON), generating a unique PostID using uuid4(). It then retrieves the title and content fields from the request and stores them in DynamoDB as a new item. After successfully inserting the data, the function returns a 200 OK response with a success message in JSON format.
+
+
+
+## GetPosts Lambda Function:
+
+```python
+
+import json
+import boto3
+
+dynamodb = boto3.resource('dynamodb')
+table = dynamodb.Table('BlogPosts')
+
+def lambda_handler(event, context):
+    # Scan the table to get all posts
+    response = table.scan()
+    items = response['Items']
+
+    return {
+        'statusCode': 200,
+        'body': json.dumps(items)
+    }
+
+```
+
+
+## code explanation
+
+This AWS Lambda function retrieves all blog posts from a DynamoDB table named "BlogPosts". It first establishes a connection to DynamoDB using boto3 and selects the BlogPosts table. When the function is triggered, it performs a scan() operation to fetch all items stored in the table. The retrieved items are then extracted from the response and converted into a JSON-formatted string. Finally, the function returns a 200 OK response with the list of blog posts in the response body.
 
 
 
