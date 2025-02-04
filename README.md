@@ -241,7 +241,7 @@ Create a new REST API click Build
 name your API 
 
 
-![image_alt]()
+![image_alt](https://github.com/Tatenda-Prince/Serverless-Blog-Web-App-Using-Lambda-API-Gateway-DynamoDB-and-Amazon-S3/blob/311040acc39ec249f515611aaf886f34a2c03923/img/Screenshot%202025-02-03%20194500.png)
 
 
 4.2.Create Resources and Methods:
