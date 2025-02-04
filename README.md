@@ -227,6 +227,59 @@ def lambda_handler(event, context):
 
 This AWS Lambda function retrieves all blog posts from a DynamoDB table named "BlogPosts". It first establishes a connection to DynamoDB using boto3 and selects the BlogPosts table. When the function is triggered, it performs a scan() operation to fetch all items stored in the table. The retrieved items are then extracted from the response and converted into a JSON-formatted string. Finally, the function returns a 200 OK response with the list of blog posts in the response body.
 
+## Step 4: Set Up API Gateway
+
+4.1.Create a New API:
+
+Go to the API Gateway Console.
+
+Create a new REST API click Build
+
+![image_alt]()
+
+
+name your API 
+
+
+![image_alt]()
+
+
+4.2.Create Resources and Methods:
+
+Create a resource /posts.
+
+Add a `POST` method for creating posts and connect it to the `CreatePost` Lambda function.
+
+![image_alt]()
+
+Add a `GET` method for retrieving posts and connect it to the `GetPosts` Lambda function.
+
+![image_alt]()
+
+
+4.3.Enable CORS:
+
+Enable CORS for the /posts resource to allow requests from your S3 frontend.
+
+![image_alt]()
+
+
+4.4.Deploy the API:
+
+Deploy the API to a stage (e.g., prod).
+
+
+![image_alt]()
+
+
+Take Note the API endpoint URL.
+
+
+## Step 5: Connect Frontend to Backend
+
+
+
+
 
 
 
