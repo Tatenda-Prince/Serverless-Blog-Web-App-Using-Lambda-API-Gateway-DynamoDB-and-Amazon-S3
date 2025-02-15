@@ -1,4 +1,4 @@
-# Serverless-Blog-Web-App-Using-Lambda-API-Gateway-DynamoDB-and-Amazon-S3
+# Serverless Blog Platform with Lambda, API Gateway, DynamoDB, and S3
 
 "Serverless Web App Blog"
 
